@@ -34,7 +34,7 @@ Using live APIs (Yahoo Finance and Pushshift), it fetches both price and social 
 | Technical indicators only | **0.422** | 0.058 |
 | Technical + sentiment features | **0.428** | 0.077 |
 
-While the signal strength is modest (AUC ≈ 0.43), this is expected for short horizon daily prediction, especially in efficient markets like Tesla’s. The result shows that sentiment features provide marginal lift when combined with volatility and trend indicators.
+While the signal strength is modest (AUC ≈ 0.43), this is expected with short horizon daily prediction, especially in efficient markets like Tesla’s. The result shows that sentiment features provide marginal lift when combined with volatility and trend indicators.
 
 ---
 
