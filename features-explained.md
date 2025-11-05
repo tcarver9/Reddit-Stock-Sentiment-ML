@@ -2,7 +2,7 @@
 
 ##  Feature Dictionary and Business Meaning
 
-This project combines technical indicators and sentiment analytics to model short-term stock movement.  
+This project combines technical indicators and sentiment analytics to model short term stock movement.  
 Below is a complete explanation of each feature used in the XGBoost classifier.
 
 ---
@@ -22,7 +22,7 @@ Below is a complete explanation of each feature used in the XGBoost classifier.
 
 | Feature | Description | Business Meaning |
 |----------|--------------|------------------|
-| sma5 | 5-day Simple Moving Average of close price. | Short-term trend direction; reacts quickly to new movements. |
+| sma5 | 5-day Simple Moving Average of close price. | Short term trend direction; reacts quickly to new movements. |
 | sma20 | 20-day Simple Moving Average. | Medium-term trend; helps identify reversals and trend strength. |
 
 ---
