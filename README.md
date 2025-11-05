@@ -76,6 +76,19 @@ From a business analytics perspective:
 
 ---
 
-### **Example Figures**
+---
+
+## Business Analytics Case Study Summary
+
+This project explores how online investor sentiment relates to short-term stock price movements using a machine-learning pipeline built around financial and social data.  
+Reddit discussion data (via the Pushshift API) was combined with market indicators from Yahoo Finance to evaluate whether public sentiment signals could enhance traditional technical models.
+
+Across 700+ trading days of Tesla data, model performance showed limited predictive lift from sentiment features (AUC ≈ 0.43), suggesting that major, information-efficient equities like TSLA already reflect most available sentiment in their prices.  
+However, the framework demonstrated how social attention metrics, volatility measures, and benchmark controls can be integrated into a single analytical system to assess behavioral market effects.
+
+From a business standpoint, the project highlights how unstructured external data can enrich decision-making beyond finance—such as demand forecasting, brand monitoring, or policy impact analysis—by quantifying public mood and engagement trends alongside numerical performance data.
+
+---
+
 
 
