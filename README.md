@@ -2,7 +2,7 @@
 # Stock Sentiment Machine Learning Pipeline
 
 ### **Project Overview**
-This project builds a **machine learning pipeline** that integrates **financial market data (Yahoo Finance)** with **Reddit sentiment analysis** to explore how online investor sentiment correlates with short-term stock performance.
+This project builds a machine learning pipeline that integrates financial market data (Yahoo Finance) with Reddit sentiment analysis to explore how online investor sentiment correlates with short-term stock performance.
 
 Using live APIs (Yahoo Finance and Pushshift), it fetches both price and social discussion data, engineers features for technical and sentiment indicators, and applies an **XGBoost classifier** in a walk-forward validation framework to assess predictive power.
 
