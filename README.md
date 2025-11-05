@@ -4,14 +4,14 @@
 ### **Project Overview**
 This project builds a machine learning pipeline that integrates financial market data (Yahoo Finance) with Reddit sentiment analysis to explore how online investor sentiment correlates with short-term stock performance.
 
-Using live APIs (Yahoo Finance and Pushshift), it fetches both price and social discussion data, engineers features for technical and sentiment indicators, and applies an **XGBoost classifier** in a walk-forward validation framework to assess predictive power.
+Using live APIs (Yahoo Finance and Pushshift), it fetches both price and social discussion data, engineers features for technical and sentiment indicators, and applies an XGBoost classifier in a walk forward validation framework to assess predictive power.
 
 ---
 
 ### **Key Objectives**
-- Quantify the relationship between **market sentiment** and **short-horizon stock returns**.  
-- Evaluate whether **social network discussion adds predictive signal** beyond standard market technicals.  
-- Build a **fully automated ML workflow** that refreshes data, trains models, and generates visual summaries.
+- Quantify the relationship between market sentiment and short-horizon stock returns.  
+- Evaluate whether social network discussion adds predictive signal beyond standard market technicals.  
+- Build a fully automated ML workflow that refreshes data, trains models, and generates visual summaries.
 
 ---
 
