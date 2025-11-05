@@ -1,4 +1,3 @@
-# Reddit-API-Stock-Prediction
 # Stock Sentiment Machine Learning Pipeline
 
 ### **Project Overview**
