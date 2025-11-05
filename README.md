@@ -76,7 +76,6 @@ From a business analytics perspective:
 
 ---
 
----
 
 ## Business Analytics Case Study Summary
 
