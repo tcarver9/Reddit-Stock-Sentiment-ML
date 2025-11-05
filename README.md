@@ -78,11 +78,4 @@ From a business analytics perspective:
 
 ### **Example Figures**
 
-| ![AUC + Importance](artifacts/results.png) | ![ROC + Calibration](artifacts/roc_calibration.png) |
-|:------------------------------------------:|:---------------------------------------------------:|
-| *Model comparison & feature importance* | *Holdout ROC and calibration analysis* |
-
-| ![Sentiment vs Price](artifacts/sent_vs_price.png) | ![Strategy Lift](artifacts/strategy_lift.png) |
-|:--------------------------------------------------:|:---------------------------------------------:|
-| *Price vs sentiment correlation* | *Illustrative cumulati*
 
