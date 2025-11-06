@@ -100,10 +100,10 @@ def fetch_prices_yf(ticker: str, start: str, end: Optional[str] = None) -> pd.Da
     spy["ret_spy"] = spy["close"].pct_change()
     spy["vol_spy10"] = spy["ret_spy"].rolling(10).std()
 
-    # Merge SPY benchmark into main prices DataFrame
+    # Merge SPY into main prices DataFrame
     px = px.merge(spy[["date", "ret_spy", "vol_spy10"]], on="date", how="left")
 
-    # Make sure 'date' is timezone-correct and datetime
+    # Make sure date is timezone correct and datetime
     px["date"] = pd.to_datetime(px["date"]).dt.tz_localize(None)
 
     print("Prices columns:", px.columns.tolist()[:12], "...")
@@ -174,7 +174,7 @@ def fetch_pushshift_day_bucketed(ticker: str, subs: List[str], start: str, end: 
 
         items = []
         for endpoint in ("submission", "comment"):
-            # paginate by “before” 
+            # paginate by before 
             next_before = before_ts
             while True:
                 params = dict(common)
