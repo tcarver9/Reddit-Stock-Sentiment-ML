@@ -53,7 +53,7 @@ The performance metric used is AUC (Area Under the ROC Curve).
 - AUC closer to 1.0 indicates strong predictive power.
 
 In this project, the AUC value is around 0.43, which suggests the model performs only slightly better than random chance.  
-This is expected for large, efficient stocks such as Tesla, where information is rapidly priced in.
+This makes sense for a large, efficient stock such as Tesla, where information is quickly priced in.
 
 ---
 
