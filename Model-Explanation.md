@@ -1,6 +1,6 @@
 ---
 
-## 🧠 Understanding the XGBoost Classifier
+## Understanding the XGBoost Classifier
 
 This model uses an XGBoost classifier to estimate the probability that a stock’s price will rise over the next five trading days.  
 It does not forecast exact prices; rather, it predicts whether short-term movement is likely to be positive or negative.
