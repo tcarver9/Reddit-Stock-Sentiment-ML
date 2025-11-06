@@ -233,7 +233,7 @@ def fetch_pushshift_day_bucketed(ticker: str, subs: List[str], start: str, end: 
         day = cal.merge(day, on="date", how="left").fillna({"n_docs":0, "sent_mean":0.0, "pos_share":0.0})
 
         daily_rows.extend(day.to_dict("records"))
-        time.sleep(0.35)  # be polite
+        time.sleep(0.35) 
 
     daily = pd.DataFrame(daily_rows).sort_values("date")
     daily["date"] = pd.to_datetime(daily["date"])
@@ -371,7 +371,7 @@ def main():
     print("Saved merged features to features.csv")
 
     # Final model on 80% 
-    # Build a feature list 
+    # Build feature list 
     base_tech = ["close","ret","sma5","sma20","rsi14","vol10","vol20"]
     optional_tech = ["ret_spy","vol_spy10"]       # only if SPY context
     sent_cols = [
