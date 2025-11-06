@@ -3,7 +3,7 @@
 ## Understanding the XGBoost Classifier
 
 This model uses an XGBoost classifier to estimate the probability that a stock’s price will rise over the next five trading days.  
-It does not forecast exact prices; rather, it predicts whether short-term movement is likely to be positive or negative.
+It does not forecast exact prices. It predicts whether short term movement is likely to be positive or negative.
 
 ---
 
@@ -12,7 +12,7 @@ It does not forecast exact prices; rather, it predicts whether short-term moveme
 - The model is trained using a target variable called `label_up`.  
   - `label_up = 1` means the stock price increased over the next five days.  
   - `label_up = 0` means the stock price stayed the same or declined.  
-- XGBoost learns from technical indicators (moving averages, RSI, volatility) and sentiment data (Reddit metrics) to estimate this probability.  
+- XGBoost learns from technical indicators (moving averages, RSI, volatility) and sentiment data (Reddit) to estimate this probability.  
 - The output is a value between 0 and 1:
   - Values closer to 1 indicate a higher probability of an upward move.
   - Values closer to 0 indicate a higher probability of a downward move.
