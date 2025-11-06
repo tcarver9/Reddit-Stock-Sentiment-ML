@@ -530,6 +530,43 @@ def main():
             plt.tight_layout(); plt.savefig("artifacts/return_by_sent_quintile.png", dpi=200); plt.close(fig)
             print("Saved chart to artifacts/return_by_sent_quintile.png")
 
+    print(">>> predictions block: sizes df_model vs feat:", len(df_model), len(feat))
+    probs_all = clf.predict_proba(X)[:, 1]  # probabilities for rows in df_model
+
+    # put predictions into df_model 
+    df_model = df_model.copy()
+    df_model["pred_up_prob"] = probs_all
+    df_model["pred_signal"] = (df_model["pred_up_prob"] > 0.5).astype(int)
+
+    # join the two columns back to feat by index 
+    feat = feat.join(df_model[["pred_up_prob", "pred_signal"]], how="left")
+
+    # rows that have predictions (those from df_model)
+    df_plot = feat.loc[df_model.index].copy()
+    # only holdout period:
+    # holdout_idx = df_model.index[cutoff:]
+    # df_plot = feat.loc[holdout_idx].copy()
+
+    plt.figure(figsize=(12, 6))
+    plt.plot(df_plot["date"], df_plot["close"], label=f"{CFG.ticker} Close", color="black", linewidth=1.5)
+    plt.scatter(
+        df_plot.loc[df_plot["pred_signal"] == 1, "date"],
+        df_plot.loc[df_plot["pred_signal"] == 1, "close"],
+        color="green", label="Model predicts Up", marker="^", s=50, alpha=0.85
+    )
+    plt.scatter(
+        df_plot.loc[df_plot["pred_signal"] == 0, "date"],
+        df_plot.loc[df_plot["pred_signal"] == 0, "close"],
+        color="red", label="Model predicts Down", marker="v", s=50, alpha=0.85
+    )
+    plt.title("Model Predictions vs Price (5-Day Horizon)")
+    plt.xlabel("Date"); plt.ylabel("Closing Price (USD)")
+    plt.legend(); plt.tight_layout()
+    os.makedirs("artifacts", exist_ok=True)
+    plt.savefig("artifacts/predictions_vs_price.png", dpi=300)
+    print("Saved chart to artifacts/predictions_vs_price.png")
+    plt.close()
+    
 if __name__ == "__main__":
     main()
 
