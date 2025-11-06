@@ -41,7 +41,7 @@ def fetch_prices_yf(ticker: str, start: str, end: Optional[str] = None) -> pd.Da
     if px is None or px.empty:
         raise ValueError("No price data returned. Check ticker and dates.")
 
-    # Ensure the datetime index becomes a column named 'date'
+    # Ensure the datetime index becomes a column named date
     px = px.copy()
     px = px.rename_axis("date").reset_index()
 
@@ -52,7 +52,6 @@ def fetch_prices_yf(ticker: str, start: str, end: Optional[str] = None) -> pd.Da
             for col in px.columns
         ]
 
-    # Normalize column names to lowercase
     px = px.rename(columns=str.lower)
     # Remove _aapl from column names
     t_suffix = f"_{ticker.lower()}"
@@ -65,7 +64,7 @@ def fetch_prices_yf(ticker: str, start: str, end: Optional[str] = None) -> pd.Da
     # Daily return
     px["ret"] = px["close"].pct_change()
 
-    # predict 5-day ahead return
+    # predict 5 day ahead return
     H = 5  # number of trading days ahead
     px["fwd_ret_H"] = px["close"].shift(-H) / px["close"] - 1
     px["label_up"] = (px["fwd_ret_H"] > 0).astype(int)
@@ -74,7 +73,7 @@ def fetch_prices_yf(ticker: str, start: str, end: Optional[str] = None) -> pd.Da
     px["sma5"] = px["close"].rolling(5).mean()
     px["sma20"] = px["close"].rolling(20).mean()
 
-    # RSI (quick version from returns)
+    # RSI quick version from returns
     up = px["ret"].clip(lower=0).rolling(14).mean()
     down = (-px["ret"].clip(upper=0)).rolling(14).mean()
     rs = up / (down.replace(0, np.nan))
@@ -93,7 +92,7 @@ def fetch_prices_yf(ticker: str, start: str, end: Optional[str] = None) -> pd.Da
     else:
         spy.columns = [c.lower() for c in spy.columns]
 
-    # Reset index to make 'date' a column
+    # Reset index to make date a column
     spy = spy.reset_index()
     spy.rename(columns={"Date": "date"}, inplace=True)
 
